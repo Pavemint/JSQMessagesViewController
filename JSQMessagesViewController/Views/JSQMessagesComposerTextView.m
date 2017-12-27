@@ -25,8 +25,6 @@
 
 @implementation JSQMessagesComposerTextView
 
-@synthesize pasteDelegate;
-
 #pragma mark - Initialization
 
 - (void)jsq_configureTextView
@@ -144,7 +142,7 @@
 
 - (void)paste:(id)sender
 {
-    if (!self.pasteDelegate || [self.pasteDelegate composerTextView:self shouldPasteWithSender:sender]) {
+    if (!self.jsqPasteDelegate || [self.jsqPasteDelegate composerTextView:self shouldPasteWithSender:sender]) {
         [super paste:sender];
     }
 }
